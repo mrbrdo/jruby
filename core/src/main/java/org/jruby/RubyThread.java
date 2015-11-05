@@ -103,7 +103,7 @@ import org.jruby.util.ByteList;
 @JRubyClass(name="Thread")
 public class RubyThread extends RubyObject implements ExecutionContext {
 
-    private static final Logger LOG = LoggerFactory.getLogger("RubyThread");
+    private static final Logger LOG = LoggerFactory.getLogger(RubyThread.class);
 
     /** The thread-like think that is actually executing */
     private volatile ThreadLike threadImpl;
