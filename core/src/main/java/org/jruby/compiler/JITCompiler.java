@@ -278,7 +278,7 @@ public class JITCompiler implements JITCompilerMBean {
                 }
 
                 if (config.isJitLogging()) {
-                    log(method.getImplementationClass(), method.getFile(), method.getLine(), className + "." + methodName, "done jitting");
+                    log(method.getImplementationClass(), method.getFile(), method.getLine(), className + '.' + methodName, "done jitting");
                 }
 
                 Map<Integer, MethodType> signatures = context.getNativeSignatures();
