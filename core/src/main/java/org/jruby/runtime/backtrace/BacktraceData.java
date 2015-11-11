@@ -26,7 +26,7 @@ public class BacktraceData implements Serializable {
 
     public static final BacktraceData EMPTY = new BacktraceData(
             new StackTraceElement[0],
-            new BacktraceElement[0],
+            BacktraceElement.EMPTY_ARRAY,
             false,
             false,
             false);
@@ -38,6 +38,7 @@ public class BacktraceData implements Serializable {
         return backtraceElements;
     }
 
+    @SuppressWarnings("unchecked")
     public RubyStackTraceElement[] getBacktraceWithoutRuby() {
         return constructBacktrace(Collections.EMPTY_MAP);
     }
