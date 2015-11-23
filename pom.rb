@@ -62,6 +62,7 @@ project 'JRuby', 'https://github.com/jruby/jruby' do
               'polyglot.dump.pom' => 'pom.xml',
               'polyglot.dump.readonly' => 'true',
               'jruby.plugins.version' => '1.0.10',
+              'mavengem-wagon.version' => '0.1.0',
 
               'json.version' => '1.8.0',
               'krypt.version' => '0.0.2.rc1',

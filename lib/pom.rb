@@ -43,10 +43,9 @@ project 'JRuby Lib Setup' do
   # just depends on jruby-core so we are sure the jruby.jar is in place
   jar "org.jruby:jruby-core:#{version}", :scope => 'test'
 
-  #repository( :url => 'https://otto.takari.io/content/repositories/rubygems/maven/releases',
-  #            :id => 'rubygems-releases' )
-  #repository( :url => 'http://rubygems-proxy.torquebox.org/releases',
-  #            :id => 'tb-rubygems-releases' )
+  extension 'de.saumya.mojo:mavengem-wagon:0.1.0'
+  #repository :id => :mavengem, :url => 'mavengem:http://rubygems.org'
+
   # for testing out jruby-ossl before final release :
   #repository( :url => 'http://oss.sonatype.org/content/repositories/staging',
   #            :id => 'gem-staging' )

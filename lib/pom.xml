@@ -176,6 +176,13 @@ DO NOT MODIFIY - GENERATED CODE
     </dependency>
   </dependencies>
   <build>
+    <extensions>
+      <extension>
+        <groupId>de.saumya.mojo</groupId>
+        <artifactId>mavengem-wagon</artifactId>
+        <version>0.1.0</version>
+      </extension>
+    </extensions>
     <resources>
       <resource>
         <targetPath>${jruby.complete.gems}</targetPath>

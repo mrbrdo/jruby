@@ -37,16 +37,14 @@ project 'JRuby Integration Tests' do
   inherit 'org.jruby:jruby-parent', version
   id 'org.jruby:jruby-tests'
 
-  repository( :url => 'https://otto.takari.io/content/repositories/rubygems/maven/releases',
-              :id => 'rubygems-releases' )
+  repository :id => :mavengems, :url => 'mavengem:http://rubygems.org'
 
   plugin_repository( :url => 'https://oss.sonatype.org/content/repositories/snapshots/',
                      :id => 'sonatype' ) do
     releases 'false'
     snapshots 'true'
   end
-  plugin_repository( :id => 'rubygems-releases',
-                     :url => 'https://otto.takari.io/content/repositories/rubygems/maven/releases' )
+  plugin_repository :id => :mavengems, :url => 'mavengem:http://rubygems.org'
 
   properties( 'polyglot.dump.pom' => 'pom.xml',
               'jruby.home' => '${basedir}/..',
@@ -143,6 +141,8 @@ project 'JRuby Integration Tests' do
   build do
     default_goal 'test'
     test_source_directory '.'
+
+    extension 'de.saumya.mojo:mavengem-wagon:${mavengem-wagon.version}'
   end
 
   profile 'bootstrap' do
